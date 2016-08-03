@@ -20,7 +20,7 @@ install nginx repos.
 Role Variables
 --------------
 
-none.
+see defaults/main.yml
 
 Dependencies
 ------------

@@ -1,0 +1,8 @@
+---
+# defaults file for ansible-role-nginx
+
+nginx_install_from:
+    - { name: "nginx",  enablerepo: "nginx" }
+
+var_log_nginx_permission: "0755"
+

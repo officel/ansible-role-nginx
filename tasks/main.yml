@@ -1,0 +1,18 @@
+---
+# tasks file for ansible-role-nginx
+
+- name: install packages
+  yum:
+    name: "{{ item.name }}"
+    state: present
+    enablerepo: "{{ item.enablerepo | default('') }}"
+  with_items: "{{ nginx_install_from }}"
+  tags: ['nginx']
+
+- name: chmod log dir
+  file:
+    path: /var/log/nginx
+    state: directory
+    mode: "{{ var_log_nginx_permission | default('0755') }}"
+  tags: ['nginx']
+

@@ -2,4 +2,5 @@
 - hosts: all
   become: true
   roles:
+    - officel.yum-repos
     - role_test

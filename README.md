@@ -33,6 +33,7 @@ Example Playbook
     - hosts: all
       become: true
       roles:
+         - officel.yum-repos
          - officel.nginx
 
 License

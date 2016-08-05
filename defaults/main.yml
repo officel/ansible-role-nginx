@@ -6,3 +6,5 @@ nginx_install_from:
 
 var_log_nginx_permission: "0755"
 
+nginx_service_on: yes
+

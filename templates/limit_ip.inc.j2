@@ -1,0 +1,16 @@
+# limit ip (with basic auth)
+
+# satisfy any;
+
+allow 127.0.0.1;
+# allow xx.xx.xx.xx
+
+deny all;
+# allow all;
+
+
+# basic auth if use
+# sudo htpasswd [-c] /etc/nginx/include/limit_basic.inc USERNAME
+
+# auth_basic "Login";
+# auth_basic_user_file /etc/nginx/conf.d/include/limit_basic.inc;

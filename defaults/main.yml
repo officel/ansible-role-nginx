@@ -8,3 +8,11 @@ var_log_nginx_permission: "0755"
 
 nginx_service_on: yes
 
+# /etc/nginx/conf.d/include
+nginx_include_permission: "0755"
+
+# /etc/nginx/conf.d/include/*.inc
+nginx_include_files:
+  - healthcheck_no_log.inc
+  - geo_allow_ip.inc
+  - limit_ip.inc

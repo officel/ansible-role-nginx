@@ -22,3 +22,19 @@
     enabled: "{{ nginx_service_on | default('no') }}"
   tags: ['nginx']
  
+# one or more think?
+
+- name: mkdir include
+  file:
+    path: /etc/nginx/conf.d/include
+    state: directory
+    mode: "{{ nginx_include_permission | default('0755') }}"
+  tags: ['nginx', 'nginx_conf']
+
+- name: puts /etc/nginx/conf.d/include/*
+  template:
+    src  : "{{ item }}.j2" 
+    dest : "/etc/nginx/conf.d/include/{{ item }}"
+  with_items: "{{ nginx_include_files }}"
+  tags: ['nginx', 'nginx_conf']
+

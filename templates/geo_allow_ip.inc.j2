@@ -1,0 +1,5 @@
+# see. http://nginx.org/en/docs/http/ngx_http_geo_module.html
+geo $allow_ip {
+    default 0;
+    192.168.0.0/23 1;
+}
